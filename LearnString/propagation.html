@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parentid" id="parent">
+        <div id="child">
+            <button>Child</button>
+        </div>
+        <button>Parent</button>
+
+    </div>
+    <script>
+        const parentId=document.getElementById('parent');
+        const childId=document.getElementById('child');
+        const parentCell=()=>{
+            alert('this is parent');
+
+        }
+        const childCell=()=>{
+            alert('this is child');
+            event.stopPropagation();
+        }
+
+
+        parentId.addEventListener('click',parentCell);
+        childId.addEventListener('click',childCell);
+    </script>
+</body>
+</html>

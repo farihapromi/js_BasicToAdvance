@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stysle.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>Event in Javascript</h1>
+        <input type="text" name="username" id="myInput"
+        placeholder="Type Something....."
+        autocomplete="off"
+        />
+        <div class="output">
+            <p class="inputValue">Input Value</p>
+            <p class="inputName">Input name:</p>
+            <p class="inputType">Input TYpe:</p>
+            <p class="eventType">Event Type:</p>
+        </div>
+    </section>
+    <script>
+        const inputElem=document.getElementById('myInput')
+        const handleEvent=(e)=>{
+          
+            document.querySelector('.inputValue').textContent=`Input Value :${e.target.value}`;
+            document.querySelector('.inputName').textContent=`Input Name :${e.target.name}`;
+
+            document.querySelector('.inputType').textContent=`Input Type :${e.target.type}`;
+
+            document.querySelector('.eventType').textContent=`Event Type :${e.type}`;
+
+
+        }
+         inputElem.addEventListener('change',handleEvent)
+
+    </script>
+</body>
+</html>

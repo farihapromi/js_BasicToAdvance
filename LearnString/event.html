@@ -1,0 +1,58 @@
+<!-- //4 types of event in js
+//1.using alert();
+//2.by calling a function
+//3.using inline events (html onclick propert)
+//4.uisng event listenrs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="event" onmousedown="mousedown()" onmouseup="mouseup()">my name is promi</p> -->
+    <div>
+        <!-- change input and show the inputEvent and show them -->
+    <input type="text" name='name'id="myname">
+<br>
+<label for="">Choose icecream
+<select name="icecream" id="icecream" onchange="selectElement()">
+<option value="">Select one</option>
+<option value="Chocolate">Chocolate</option>
+<option value="vanila">vanila</option>
+<option value="strawbery">strawbery</option>
+</select>
+</label>
+<br>
+<div id="result">yy</div>
+</div>
+
+</body>
+<script>
+    // const selectElement=()=>{
+    //     const name=document.getElementById('myname').value;
+    //     const icecremName=document.getElementById('icecream').value;
+    //     const result=document.getElementById('result');
+    //     result.innerHTML=` my name is ${name} and I like ${icecremName} flavour`;
+    // }
+    const icecream= document.getElementById('icecream');
+    icecream.addEventListener('change',()=>{
+        const name=document.getElementById('myname').value;
+        const icecremName=document.getElementById('icecream').value;
+        const result=document.getElementById('result');
+        result.innerHTML=` my name is ${name} and I like ${icecremName} flavour`;
+
+    })
+
+    // function mouseup(){
+    //     document.getElementById('event').innerHTML='Its fariha promi'
+    // }
+    // function mousedown(){
+    //     document.getElementById('event').style.color='red';
+    // }
+
+
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Stop me </p>
+        <br>
+        <button id="btn">Click here</button>
+        <button id="stop">Stop</button>
+    </div>
+    <script>
+        const stopNum=document.querySelector('p');
+        const mybtn=document.getElementById('btn');
+        const stopbtn=document.getElementById('stop');
+        let num=0;
+        let timeRef;
+        const showmyNum=()=>{
+            stopNum.innerHTML='Loading....';
+            // variable a hold korbo jate kore sei variable ke use kore stop kora jai nahole infinite loop a chole jabe
+            timeRef=setInterval(()=>{
+                stopNum.innerHTML=`${num}`;
+                num++;
+            },1000)
+
+        }
+        mybtn.addEventListener('click',showmyNum);
+        // clearInterval diye oi event ta ke stop kore deya hoccce
+        stopbtn.addEventListener('click',()=>{
+            clearInterval(timeRef);
+        })
+    </script>
+    
+</body>
+</html>
